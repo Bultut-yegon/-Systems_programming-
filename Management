@@ -1,0 +1,36 @@
+Subproblems and Order of Implementation:
+Define the Data Structure:
+
+Define a struct for storing contact information.
+Define an array of this structure to hold up to 12 contacts.
+Testing: Verify that the structure is defined correctly and that an array of these structures can be created.
+Initialize the Contact List:
+
+Initialize the array to store up to 12 contacts.
+Maintain a count of the current number of contacts.
+Testing: Print the initialized array and count to ensure proper setup.
+Add a Contact:
+
+Implement a function to add a contact to the list.
+Check for available space before adding.
+Testing: Add several contacts and print the list to verify correct addition.
+Delete a Contact:
+
+Implement a function to delete a contact by a specific criterion (e.g., first name and last name).
+Shift the remaining contacts in the array to fill the gap.
+Testing: Add and delete contacts, then print the list to ensure correct deletion and shifting.
+Update a Contact:
+
+Implement a function to update the contact information of an existing contact.
+Identify the contact by a specific criterion and update the fields.
+Testing: Add, update, and display contacts to verify correct updating.
+Display Contacts:
+
+Implement a function to display all current contacts.
+Iterate through the list and print the contact details.
+Testing: Add multiple contacts and display them to ensure correct display.
+User Interface:
+
+Implement a menu-driven interface to allow the user to add, delete, update, and display contacts.
+Use a loop to display the menu options and call the corresponding functions based on user input.
+Testing: Test the entire program by adding, deleting, updating, and displaying contacts through the user interface.
