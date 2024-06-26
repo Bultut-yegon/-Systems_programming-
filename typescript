@@ -128,4 +128,116 @@ class ClientHandler extends Thread {
     }
 }
 
-[1m[7m%[27m[1m[0m                                                                                ]2;bultut@Bultman-pc:~/Downloads/Documents/DS/Java Programming Sockets]1;..mming Sockets]7;file://Bultman-pc/home/bultut/Downloads/Documents/DS/Java%20Programming%20Sockets[0m[27m[24m[J[0m[49m[39m[0m[47m[38;5;30m [0m[38;5;30m[47m[47m[38;5;30m [0m[38;5;30m[47m[48;5;30m[37m[0m[37m[48;5;30m[48;5;30m[38;5;254m  [1m[38;5;254m[48;5;30m[38;5;255m~[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mD[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mDo[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/DS/[1m[38;5;254m[48;5;30m[38;5;255mJava Programming Sockets[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m[0m[38;5;254m[48;5;30m[48;5;30m[38;5;254m [0m[38;5;254m[48;5;30m[49m[38;5;30m[0m[38;5;30m[49m[39m [0m[49m[39m[K[22C[0m[49m[30m[0m[30m[40m[32m [0m[32m[40m[40m[32m✔[0m[32m[40m[40m[32m [0m[32m[40m[40m[32m[34m[0m[34m[40m[44m[30m base[0m[30m[44m[44m[30m [0m[30m[44m[44m[30m [0m[30m[44m[49m[39m[35D[?2004hc[1m[31mc[0m[39m[1m[31mc[0m[39m[38;5;244mat UDPServer.java[39m[17D[1m[31mc[1m[31ma[0m[39m[1m[31mc[1m[31ma[1m[31mt[0m[39m[0m[32mc[0m[32ma[0m[32mt[39m[32mt[32m [39m[32mt[39m[39m [39mC[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [13D[4mC[24m[4mC[4ml[24m[24mC[24mlient[4mC[4ml[4mi[4me[4mn[4mt[24m[4m
+[1m[7m%[27m[1m[0m                                                                                ]2;bultut@Bultman-pc:~/Downloads/Documents/DS/Java Programming Sockets]1;..mming Sockets]7;file://Bultman-pc/home/bultut/Downloads/Documents/DS/Java%20Programming%20Sockets[0m[27m[24m[J[0m[49m[39m[0m[47m[38;5;30m [0m[38;5;30m[47m[47m[38;5;30m [0m[38;5;30m[47m[48;5;30m[37m[0m[37m[48;5;30m[48;5;30m[38;5;254m  [1m[38;5;254m[48;5;30m[38;5;255m~[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mD[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mDo[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/DS/[1m[38;5;254m[48;5;30m[38;5;255mJava Programming Sockets[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m[0m[38;5;254m[48;5;30m[48;5;30m[38;5;254m [0m[38;5;254m[48;5;30m[49m[38;5;30m[0m[38;5;30m[49m[39m [0m[49m[39m[K[22C[0m[49m[30m[0m[30m[40m[32m [0m[32m[40m[40m[32m✔[0m[32m[40m[40m[32m [0m[32m[40m[40m[32m[34m[0m[34m[40m[44m[30m base[0m[30m[44m[44m[30m [0m[30m[44m[44m[30m [0m[30m[44m[49m[39m[35D[?2004hc[1m[31mc[0m[39m[1m[31mc[0m[39m[38;5;244mat UDPServer.java[39m[17D[1m[31mc[1m[31ma[0m[39m[1m[31mc[1m[31ma[1m[31mt[0m[39m[0m[32mc[0m[32ma[0m[32mt[39m[32mt[32m [39m[32mt[39m[39m [39mC[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [13D[4mC[24m[4mC[4ml[24m[24mC[24mlient[4mC[4ml[4mi[4me[4mn[4mt[24m[4mt[4m.[24m[4m.[4mj[24m[4mj[4mava[24m[1m [0m[0m [?2004l
+]2;cat Client.java]1;// Java program to illustrate Client side 
+// Implementation using DatagramSocket 
+import java.io.IOException; 
+import java.net.DatagramPacket; 
+import java.net.DatagramSocket; 
+import java.net.InetAddress; 
+import java.util.Scanner; 
+  
+public class Client
+{ 
+    public static void main(String args[]) throws IOException 
+    { 
+        Scanner sc = new Scanner(System.in); 
+  
+        // Step 1:Create the socket object for 
+        // carrying the data. 
+        DatagramSocket ds = new DatagramSocket(); 
+  
+        InetAddress ip = InetAddress.getLocalHost(); 
+        byte buf[] = null; 
+  
+        // loop while user not enters "bye" 
+        while (true) 
+        { 
+            String inp = sc.nextLine(); 
+  
+            // convert the String input into the byte array. 
+            buf = inp.getBytes(); 
+  
+            // Step 2 : Create the datagramPacket for sending 
+            // the data. 
+            DatagramPacket DpSend = 
+                  new DatagramPacket(buf, buf.length, ip, 1234); 
+  
+            // Step 3 : invoke the send call to actually send 
+            // the data. 
+            ds.send(DpSend); 
+  
+            // break the loop if user enters "bye" 
+            if (inp.equals("bye")) 
+                break; 
+        } 
+    } 
+} [1m[7m%[27m[1m[0m                                                                                ]2;bultut@Bultman-pc:~/Downloads/Documents/DS/Java Programming Sockets]1;..mming Sockets]7;file://Bultman-pc/home/bultut/Downloads/Documents/DS/Java%20Programming%20Sockets[0m[27m[24m[J[0m[49m[39m[0m[47m[38;5;30m [0m[38;5;30m[47m[47m[38;5;30m [0m[38;5;30m[47m[48;5;30m[37m[0m[37m[48;5;30m[48;5;30m[38;5;254m  [1m[38;5;254m[48;5;30m[38;5;255m~[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mD[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mDo[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/DS/[1m[38;5;254m[48;5;30m[38;5;255mJava Programming Sockets[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m[0m[38;5;254m[48;5;30m[48;5;30m[38;5;254m [0m[38;5;254m[48;5;30m[49m[38;5;30m[0m[38;5;30m[49m[39m [0m[49m[39m[K[22C[0m[49m[30m[0m[30m[40m[32m [0m[32m[40m[40m[32m✔[0m[32m[40m[40m[32m [0m[32m[40m[40m[32m[34m[0m[34m[40m[44m[30m base[0m[30m[44m[44m[30m [0m[30m[44m[44m[30m [0m[30m[44m[49m[39m[35D[?2004hl[1m[31ml[0m[39m[1m[31ml[0m[39m[38;5;244ms[39m[1m[31ml[1m[31ms[0m[39m[0m[32ml[0m[32ms[39m[?2004l
+]2;ls $LS_OPTIONS]1;Client.class         Server.class     UDPClient.java
+ClientHandler.class  Server.java      UDPServer.class
+Client.java          UDPClient.class  UDPServer.java
+[1m[7m%[27m[1m[0m                                                                                ]2;bultut@Bultman-pc:~/Downloads/Documents/DS/Java Programming Sockets]1;..mming Sockets]7;file://Bultman-pc/home/bultut/Downloads/Documents/DS/Java%20Programming%20Sockets[0m[27m[24m[J[0m[49m[39m[0m[47m[38;5;30m [0m[38;5;30m[47m[47m[38;5;30m [0m[38;5;30m[47m[48;5;30m[37m[0m[37m[48;5;30m[48;5;30m[38;5;254m  [1m[38;5;254m[48;5;30m[38;5;255m~[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mD[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mDo[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/DS/[1m[38;5;254m[48;5;30m[38;5;255mJava Programming Sockets[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m[0m[38;5;254m[48;5;30m[48;5;30m[38;5;254m [0m[38;5;254m[48;5;30m[49m[38;5;30m[0m[38;5;30m[49m[39m [0m[49m[39m[K[22C[0m[49m[30m[0m[30m[40m[32m [0m[32m[40m[40m[32m✔[0m[32m[40m[40m[32m [0m[32m[40m[40m[32m[34m[0m[34m[40m[44m[30m base[0m[30m[44m[44m[30m [0m[30m[44m[44m[30m [0m[30m[44m[49m[39m[35D[?2004hc[1m[31mc[0m[39m[1m[31mc[0m[39m[38;5;244mat Client.java[39m[14D[1m[31mc[1m[31md[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [13D[0m[32mc[0m[32md[39m[38;5;244m Java\ Programming\ Sockets[39m[K[27D[32mc[32md[32m [39m[32mc[32md[39m[39m [39m.[K[18C[0m[49m[30m[0m[30m[40m[32m [0m[32m[40m[40m[32m✔[0m[32m[40m[40m[32m [0m[32m[40m[40m[32m[34m[0m[34m[40m[44m[30m base[0m[30m[44m[44m[30m [0m[30m[44m[44m[30m [0m[30m[44m[49m[39m[31D[4m.[24m[38;5;244m.[39m[4m.[39m[4m.[24m[?2004l
+]2;cd ..]1;[1m[7m%[27m[1m[0m                                                                                ]2;bultut@Bultman-pc:~/Downloads/Documents/DS]1;../Documents/DS]7;file://Bultman-pc/home/bultut/Downloads/Documents/DS[0m[27m[24m[J[0m[49m[39m[0m[47m[38;5;30m [0m[38;5;30m[47m[47m[38;5;30m [0m[38;5;30m[47m[48;5;30m[37m[0m[37m[48;5;30m[48;5;30m[38;5;254m  [1m[38;5;254m[48;5;30m[38;5;255m~[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mD[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mDo[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[1m[38;5;254m[48;5;30m[38;5;255mDS[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m[0m[38;5;254m[48;5;30m[48;5;30m[38;5;254m [0m[38;5;254m[48;5;30m[49m[38;5;30m[0m[38;5;30m[49m[39m [0m[49m[39m[K[47C[0m[49m[30m[0m[30m[40m[32m [0m[32m[40m[40m[32m✔[0m[32m[40m[40m[32m [0m[32m[40m[40m[32m[34m[0m[34m[40m[44m[30m base[0m[30m[44m[44m[30m [0m[30m[44m[44m[30m [0m[30m[44m[49m[39m[60D[?2004hl[1m[31ml[0m[39m[1m[31ml[0m[39m[38;5;244ms[39m[1m[31ml[1m[31ms[0m[39m[0m[32ml[0m[32ms[39m[?2004l
+]2;ls $LS_OPTIONS]1;[0m[01;34m'Java Programming Sockets'[0m
+[1m[7m%[27m[1m[0m                                                                                ]2;bultut@Bultman-pc:~/Downloads/Documents/DS]1;../Documents/DS]7;file://Bultman-pc/home/bultut/Downloads/Documents/DS[0m[27m[24m[J[0m[49m[39m[0m[47m[38;5;30m [0m[38;5;30m[47m[47m[38;5;30m [0m[38;5;30m[47m[48;5;30m[37m[0m[37m[48;5;30m[48;5;30m[38;5;254m  [1m[38;5;254m[48;5;30m[38;5;255m~[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mD[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mDo[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[1m[38;5;254m[48;5;30m[38;5;255mDS[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m[0m[38;5;254m[48;5;30m[48;5;30m[38;5;254m [0m[38;5;254m[48;5;30m[49m[38;5;30m[0m[38;5;30m[49m[39m [0m[49m[39m[K[47C[0m[49m[30m[0m[30m[40m[32m [0m[32m[40m[40m[32m✔[0m[32m[40m[40m[32m [0m[32m[40m[40m[32m[34m[0m[34m[40m[44m[30m base[0m[30m[44m[44m[30m [0m[30m[44m[44m[30m [0m[30m[44m[49m[39m[60D[?2004hc[1m[31mc[0m[39m[1m[31mc[0m[39m[38;5;244md ..[39m[1m[31mc[1m[31md[0m[39m[0m[32mc[0m[32md[39m[32mc[32md[32m [39m[32mc[32md[39m[39m [39m.[4m.[24m[4m.[39m[4m.[24m[?2004l
+]2;cd ..]1;[1m[7m%[27m[1m[0m                                                                                ]2;bultut@Bultman-pc:~/Downloads/Documents]1;..ads/Documents]7;file://Bultman-pc/home/bultut/Downloads/Documents[0m[27m[24m[J[0m[49m[39m[0m[47m[38;5;30m [0m[38;5;30m[47m[47m[38;5;30m [0m[38;5;30m[47m[48;5;30m[37m[0m[37m[48;5;30m[48;5;30m[38;5;254m  [1m[38;5;254m[48;5;30m[38;5;255m~[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mD[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[1m[38;5;254m[48;5;30m[38;5;255mDocuments[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m[0m[38;5;254m[48;5;30m[48;5;30m[38;5;254m [0m[38;5;254m[48;5;30m[49m[38;5;30m[0m[38;5;30m[49m[39m [0m[49m[39m[K[43C[0m[49m[30m[0m[30m[40m[32m [0m[32m[40m[40m[32m✔[0m[32m[40m[40m[32m [0m[32m[40m[40m[32m[34m[0m[34m[40m[44m[30m base[0m[30m[44m[44m[30m [0m[30m[44m[44m[30m [0m[30m[44m[49m[39m[56D[?2004hl[1m[31ml[0m[39m[1m[31ml[0m[39m[38;5;244ms[39m[1m[31ml[1m[31ms[0m[39m[0m[32ml[0m[32ms[39m[?2004l
+]2;ls $LS_OPTIONS]1; [0m[01;34mAI[0m               [01;34mDS[0m                 [01;34mNotebook[0m               Resume2.odt
+ Bultut.odp       [01;34mDSAIC[0m              [01;34mNotebook_codes[0m         [01;34mSystem_programming[0m
+ codeium.odt      [01;34mflask-auth[0m        'PETER ASSIGMENT.odt'   [01;34mSystems_programming[0m
+ [01;34mCODSOFT[0m          [01;34mFoodWebsite[0m        [01;34mpics[0m                   [01;34mTheory_Of_Computing[0m
+ [01;34mDAA[0m              Movie_list.odt     requirements.txt       Token.odt
+'Data code.odt'   New_Database.odb   Resume1.odt            [01;34mVS[0m
+[1m[7m%[27m[1m[0m                                                                                ]2;bultut@Bultman-pc:~/Downloads/Documents]1;..ads/Documents]7;file://Bultman-pc/home/bultut/Downloads/Documents[0m[27m[24m[J[0m[49m[39m[0m[47m[38;5;30m [0m[38;5;30m[47m[47m[38;5;30m [0m[38;5;30m[47m[48;5;30m[37m[0m[37m[48;5;30m[48;5;30m[38;5;254m  [1m[38;5;254m[48;5;30m[38;5;255m~[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mD[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[1m[38;5;254m[48;5;30m[38;5;255mDocuments[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m[0m[38;5;254m[48;5;30m[48;5;30m[38;5;254m [0m[38;5;254m[48;5;30m[49m[38;5;30m[0m[38;5;30m[49m[39m [0m[49m[39m[K[43C[0m[49m[30m[0m[30m[40m[32m [0m[32m[40m[40m[32m✔[0m[32m[40m[40m[32m [0m[32m[40m[40m[32m[34m[0m[34m[40m[44m[30m base[0m[30m[44m[44m[30m [0m[30m[44m[44m[30m [0m[30m[44m[49m[39m[56D[?2004hc[4mc[24m[4mc[24m[38;5;244md ..[39m[4mc[39m[4md[24m[24m[32mc[24m[32md[39m[32mc[32md[32m [39m[32mc[32md[39m[39m [39mS[39m [4mS[24m[38;5;244mystems_programming[39m[18D[4mS[39m[4my[24m[39ms[39mt[39me[39mm[39ms[39m_[39mp[39mr[39mo[39mg[39mr[39ma[39mm[39mm[39mi[39mn[39mg[18D[4my[4ms[4mt[4me[4mm[4ms[4m_[4mp[4mr[4mo[4mg[4mr[4ma[4mm[4mm[4mi[4mn[4mg[24m[?2004l
+]2;cd Systems_programming]1;[1m[7m%[27m[1m[0m                                                                                ]2;bultut@Bultman-pc:~/Downloads/Documents/Systems_programming]1;..s_programming]7;file://Bultman-pc/home/bultut/Downloads/Documents/Systems_programming[0m[27m[24m[J[0m[49m[39m[0m[47m[38;5;30m [0m[38;5;30m[47m[47m[38;5;30m [0m[38;5;30m[47m[48;5;30m[37m[0m[37m[48;5;30m[48;5;30m[38;5;254m  [1m[38;5;254m[48;5;30m[38;5;255m~[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mD[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mDo[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[1m[38;5;254m[48;5;30m[38;5;255mSystems_programming[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m[0m[38;5;254m[48;5;30m[48;5;30m[38;5;254m [0m[38;5;254m[48;5;30m[43m[38;5;30m[0m[38;5;30m[43m[43m[30m  [30m main [30m!1[0m[30m[43m[43m[30m [0m[30m[43m[49m[33m[0m[33m[49m[39m [0m[49m[39m[K[16C[0m[49m[30m[0m[30m[40m[32m [0m[32m[40m[40m[32m✔[0m[32m[40m[40m[32m [0m[32m[40m[40m[32m[34m[0m[34m[40m[44m[30m base[0m[30m[44m[44m[30m [0m[30m[44m[44m[30m [0m[30m[44m[49m[39m[29D[?2004hl[4ml[24m[4ml[24m[38;5;244ms[39m[4ml[39m[4ms[24m[24m[32ml[24m[32ms[39m[?2004l
+]2;ls $LS_OPTIONS]1;Contact                  [0m[01;32mLab1_script.sh[0m  Question8.exe  Question9.o
+[01;34mExercise[0m                 Management      Question8.o    README.md
+[01;34mJava_Socket_programming[0m  [01;32mProgram[0m         Question9.c    [01;32mscripts.sh[0m
+[01;34mLab1_Dir[0m                 Question8.c     Question9.exe  typescript
+[1m[7m%[27m[1m[0m                                                                                ]2;bultut@Bultman-pc:~/Downloads/Documents/Systems_programming]1;..s_programming]7;file://Bultman-pc/home/bultut/Downloads/Documents/Systems_programming[0m[27m[24m[J[0m[49m[39m[0m[47m[38;5;30m [0m[38;5;30m[47m[47m[38;5;30m [0m[38;5;30m[47m[48;5;30m[37m[0m[37m[48;5;30m[48;5;30m[38;5;254m  [1m[38;5;254m[48;5;30m[38;5;255m~[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mD[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mDo[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[1m[38;5;254m[48;5;30m[38;5;255mSystems_programming[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m[0m[38;5;254m[48;5;30m[48;5;30m[38;5;254m [0m[38;5;254m[48;5;30m[43m[38;5;30m[0m[38;5;30m[43m[43m[30m  [30m main [30m!1[0m[30m[43m[43m[30m [0m[30m[43m[49m[33m[0m[33m[49m[39m [0m[49m[39m[K[16C[0m[49m[30m[0m[30m[40m[32m [0m[32m[40m[40m[32m✔[0m[32m[40m[40m[32m [0m[32m[40m[40m[32m[34m[0m[34m[40m[44m[30m base[0m[30m[44m[44m[30m [0m[30m[44m[44m[30m [0m[30m[44m[49m[39m[29D[?2004hv[1m[31mv[0m[39m[1m[31mv[0m[39m[38;5;244mi scripts.sh[39m[12D[1m[31mv[1m[31mi[0m[39m[0m[32mv[0m[32mi[39m[32mv[32mi[32m [39m[32mv[32mi[39m[39m [39ms[39mc[39mr[39mi[39mp[39mt[39ms[39m.[39ms[39mh[10D[4ms[4mc[4mr[4mi[4mp[4mt[4ms[4m.[4ms[4mh[24m[?2004l
+]2;vi scripts.sh]1;[?1049h[22;0;0t[24;1H[?12;25h[?1h="scripts.sh" 20 lines, 343 characters [H[2J#!/bin/bash[H
+touch distributed_systems.txt
+
+
+
+echo "compare and contrast the architectural design of WinXP and Unix in terms o
+f :
+General issues
+Layering and their functions
+Handling of multiple tasks, multiuser applications, multiprocessing
+
+
+Stability of and security of processes in memory ">distributed_system.txt
+
+
+pwd
+
+mkdir cmd
+cd cmd
+
+
+~
+~[H[23B"scripts.sh" 20 lines, 343 characters [H
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[?5h[?5l[?5h[?5l[?5h[?5l[?5h[?5l[?5h[?5l[?5h[?5l[4hcd ..[4l
+
+
+[K:wq"scripts.sh" 20 lines, 348 characters 
+[?12l[?25h[?1l>[?1049l[23;0;0t[1m[7m%[27m[1m[0m                                                                                ]2;bultut@Bultman-pc:~/Downloads/Documents/Systems_programming]1;..s_programming]7;file://Bultman-pc/home/bultut/Downloads/Documents/Systems_programming[0m[27m[24m[J[0m[49m[39m[0m[47m[38;5;30m [0m[38;5;30m[47m[47m[38;5;30m [0m[38;5;30m[47m[48;5;30m[37m[0m[37m[48;5;30m[48;5;30m[38;5;254m  [1m[38;5;254m[48;5;30m[38;5;255m~[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mD[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[38;5;250mDo[0m[38;5;250m[48;5;30m[48;5;30m[38;5;254m/[1m[38;5;254m[48;5;30m[38;5;255mSystems_programming[0m[38;5;255m[48;5;30m[48;5;30m[38;5;254m[0m[38;5;254m[48;5;30m[48;5;30m[38;5;254m [0m[38;5;254m[48;5;30m[43m[38;5;30m[0m[38;5;30m[43m[43m[30m  [30m main [30m!2[0m[30m[43m[43m[30m [0m[30m[43m[49m[33m[0m[33m[49m[39m [0m[49m[39m[K[8C[0m[49m[30m[0m[30m[40m[32m [0m[32m[40m[40m[32m✔[0m[32m[40m[40m[32m [0m[32m[40m[40m[32m[33m[0m[33m[40m[43m[30m 16s[0m[30m[43m[43m[30m [0m[30m[43m[43m[30m [0m[30m[43m[43m[30m[34m[0m[34m[43m[44m[30m base[0m[30m[44m[44m[30m [0m[30m[44m[44m[30m [0m[30m[44m[49m[39m[29D[?2004hvi scripts.sh[K[13D[32mv[32mi[39m [4ms[4mc[4mr[4mi[4mp[4mt[4ms[4m.[4ms[4mh[24m[13D[32ml[32ms[39m[K[6C[0m[49m[30m[0m[30m[40m[32m [0m[32m[40m[40m[32m✔[0m[32m[40m[40m[32m [0m[32m[40m[40m[32m[33m[0m[33m[40m[43m[30m 16s[0m[30m[43m[43m[30m [0m[30m[43m[43m[30m [0m[30m[43m[43m[30m[34m[0m[34m[43m[44m[30m base[0m[30m[44m[44m[30m [0m[30m[44m[44m[30m [0m[30m[44m[49m[39m[27D[32mc[32md[39m Systems_programming[K[19D..[K[3C[0m[49m[30m[0m[30m[40m[32m [0m[32m[40m[40m[32m✔[0m[32m[40m[40m[32m [0m[32m[40m[40m[32m[33m[0m[33m[40m[43m[

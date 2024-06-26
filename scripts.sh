@@ -17,4 +17,4 @@ pwd
 mkdir cmd
 cd cmd
 
-
+cd ..
