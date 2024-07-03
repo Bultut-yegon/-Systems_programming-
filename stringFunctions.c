@@ -11,6 +11,10 @@ char src[100]="is always amazing";
 
 strcat(dest,src);
 
+
+
+
 printf("%s",&dest);
+
 }
 
