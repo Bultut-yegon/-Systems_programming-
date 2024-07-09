@@ -1,0 +1,16 @@
+file creation,modification,deletion
+fopen is a function used to open a file and associate an I/O stream with it
+syntax:
+File* fopen(const char* *path,const char *mode);
+takes 2 arguments
+ 1. A pointer to a string containing name of the file to be opened
+  2. The mode in which the file will be opened
+
+Modes
+r->opens a system file for reading
+r+-> opens for readin and writing
+w->create a text file for writing or truncate file to zero length
+w+->open for reading and writing  N/B: The file will be created if it does not 
+   exist else it will be truncated.
+a->open for appending
+a+ -> open for reading and appending

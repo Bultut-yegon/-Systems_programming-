@@ -1,0 +1,5 @@
+A function that reads data from a file that has been opened by fopen()
+Accepts 3 arguments: 
+first argument is pointer to buffer used for reading
+syntax:
+size_t fread(void *ptr, size_t size, size_t nmemb,FILE *stream)
