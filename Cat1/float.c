@@ -1,10 +1,10 @@
 #include <stdio.h>
 int main(){
-float num;
+float num;// initializing variable
 printf("Enter a floating-point number: ");
-scanf("%f", &num);
+scanf("%f", &num);//reading input
 printf("You entered: %.2f\n", num);
-return 0;
+return 0;//return statement
 } 
 
 
