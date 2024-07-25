@@ -1,0 +1,2 @@
+fseek():allows you to move the file pointer to a specific location in a file, which can be useful for reading from or writing to a specific part of the file.
+Syntax:int fseek(FILE *stream, long int offset, int whence);
