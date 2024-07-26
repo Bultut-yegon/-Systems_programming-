@@ -1,7 +1,8 @@
 //seeking from the end of the file
 #include <stdio.h>
+typedef int use;
 
-int main() {
+use main() {
     FILE *file = fopen("example.txt", "r");
     if (file == NULL) {
         perror("Error opening file");
@@ -12,7 +13,7 @@ int main() {
     fseek(file, -10, SEEK_END);
 
     // Now you can read from the new position
-    int c = fgetc(file);
+    use c = fgetc(file);
     if (c != EOF) {
         printf("Character 10 bytes from the end: %c\n", (char)c);
     } else {
