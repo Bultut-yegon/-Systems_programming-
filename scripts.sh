@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir shellScripting
 touch distributed_systems.txt
 
 
