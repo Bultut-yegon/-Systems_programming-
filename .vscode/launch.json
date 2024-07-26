@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/bultut/Downloads/Documents/Systems_programming/Exercise",
-      "program": "/home/bultut/Downloads/Documents/Systems_programming/Exercise/build/Debug/outDebug",
+      "cwd": "/home/bultut/Downloads/Documents/Systems_programming/Introduction_Quizzes",
+      "program": "/home/bultut/Downloads/Documents/Systems_programming/Introduction_Quizzes/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
